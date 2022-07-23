@@ -16,6 +16,11 @@ describe 'check codeword method' do
         expect(result).to eq "WRONG!"
     end
 
+    it 'returns the wrong message if given a codeword with the correct last letter' do
+        result = check_codeword("we")
+        expect(result).to eq "WRONG!"
+    end
+
     it "returns the wrong message if given the wrong codeword" do
         result = check_codeword("no")
         expect(result).to eq "WRONG!"
