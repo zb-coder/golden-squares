@@ -1,3 +1,5 @@
 def calculate_reading_time(text)
-    return 0
+    words = text.split(" ")
+
+    return words.length
 end

@@ -7,4 +7,11 @@ describe 'calculate_reading_time method' do
             expect(result).to eq 0
         end
     end 
+
+    context 'given a text of under two hundred words' do
+        it 'returns one' do
+            result = calculate_reading_time("one")
+            expect(result).to eq 1
+        end
+    end 
 end
