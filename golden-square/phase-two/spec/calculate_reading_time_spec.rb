@@ -20,5 +20,12 @@ describe 'calculate_reading_time method' do
             result = calculate_reading_time("one " * 200)
             expect(result).to eq 1
         end
+    end
+
+    context 'given a text of three hundred words' do
+        it 'returns two' do
+            result = calculate_reading_time("one " * 300)
+            expect(result).to eq 2
+        end
     end 
 end
