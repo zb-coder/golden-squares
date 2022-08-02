@@ -6,4 +6,11 @@ describe 'check_grammar method' do
             expect{ check_grammar("") }.to raise_error "Not a sentence"
         end
     end
+
+    context 'given a string that begins with a capital and ends with a full stop' do
+        it 'returns true' do
+            result = check_grammar("Hi, I am 20.")
+            expect(result).to eq (true)
+        end
+    end
 end

@@ -1,3 +1,10 @@
 def check_grammar(text)
-    fail "Not a sentence" if text.empty?
+
+    if text.empty?
+        return fail "Not a sentence"
+    else 
+        return true 
+    end
+
+
 end
