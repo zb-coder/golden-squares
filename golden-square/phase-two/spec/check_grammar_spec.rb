@@ -13,4 +13,11 @@ describe 'check_grammar method' do
             expect(result).to eq (true)
         end
     end
+
+    context 'given a string that does not begin with a capital letter' do
+        it 'returns false' do
+            result = check_grammar("hi, I am 20")
+            expect(result).to eq (false)
+        end
+    end
 end
