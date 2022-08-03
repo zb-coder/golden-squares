@@ -56,5 +56,10 @@ describe 'check_grammar method' do
         end
     end
 
-
+    context 'given a string that begins with a capital and ends with a comma' do
+        it 'returns false' do
+            result = check_grammar("Hi, I am 20,")
+            expect(result).to eq (false)
+        end
+    end
 end

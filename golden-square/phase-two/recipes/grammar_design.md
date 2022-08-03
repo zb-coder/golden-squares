@@ -46,6 +46,8 @@ check_grammar("Hi, I am 20!") =>  true
 #7
 check_grammar("Hi, I am 20?") =>  true
 
+#8
+check_grammar("Hi, I am 20,") =>  false
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
