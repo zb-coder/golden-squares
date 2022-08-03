@@ -28,19 +28,24 @@ _Make a list of examples of what the method will take and return._
 #1
 check_grammar("") =>  fail "Not a sentence"
 
+#2
 check_grammar("Hi, I am 20.") =>  true
 
+#3
 check_grammar("Hi, I am 20") =>  false
 
+#4
 check_grammar("hi, I am 20") =>  false
 
-check_grammar("HI, I am 20") =>  true
+#5
+check_grammar("HI, I am 20.") =>  true
 
+#6
 check_grammar("Hi, I am 20!") =>  true
 
+#7
 check_grammar("Hi, I am 20?") =>  true
 
-check_grammar("Hi, I am 20") =>  false
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
