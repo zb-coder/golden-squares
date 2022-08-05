@@ -17,15 +17,26 @@ def encode(plaintext, key)
   
   def decode(ciphertext, key)
     cipher = key.chars.uniq + (('a'..'z').to_a - key.chars)
+    
     plaintext_chars = ciphertext.chars.map do |char|
-      cipher[65 - char.ord]
+    cipher[char.ord - 65]
+    # p char.ord
+    # p "should be t"
+    # p "Actually is #{out_char}"
+        
+
+    # p "ciphertext": ciphertext
+    # p "ciphertext.chars": ciphertext.chars
+
+
     end
     return plaintext_chars.join
+    # p plaintext_chars.join
   end
   
 
-  p encode("theswiftfoxjumpedoverthelazydog", "secretkey")
-  p decode("EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL", "secretkey")
+
+  p "decode": decode("EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL", "secretkey")
   # Intended output:
   #
   # > encode("theswiftfoxjumpedoverthelazydog", "secretkey")
