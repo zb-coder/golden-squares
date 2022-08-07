@@ -6,11 +6,14 @@ class DiaryEntry
     end
 
     def title 
-        return @title
+        @title
     end
 
     def contents
-        return @contents
+        @contents
     end
     
+    def count_words
+        @contents.split(" ").length
+    end
 end
