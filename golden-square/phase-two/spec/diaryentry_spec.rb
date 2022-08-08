@@ -41,5 +41,30 @@ describe DiaryEntry do
                 expect{diary_entry.reading_time(0)}.to raise_error "Reading time must be above 0"
             end
         end  
+
+        describe '#reading_chunk' do
+            context 'given a contents readable within the given minutes' do
+                it 'returns the full contents' do
+                    diary_entry = DiaryEntry.new('my_title', 'my diary entry')
+                    chunk = diary_entry.reading_chunk(200, 1)
+                    expect(chunk).to eq ('my diary entry')
+                end
+            end
+
+            context 'given a contents unreadable within the time' do
+                it 'returns the readable chunk' do
+                    diary_entry = DiaryEntry.new('my_title', 'my diary entry')
+                    chunk = diary_entry.reading_chunk(2, 1)
+                    expect(chunk).to eq ('my diary')
+                end
+
+                it 'returns the next chunk next time it is called' do
+                    diary_entry = DiaryEntry.new('my_title', 'my diary entry')
+                    diary_entry.reading_chunk(2, 1)
+                    chunk = diary_entry.reading_chunk(2, 1)
+                    expect(chunk).to eq('entry')
+                end
+            end
+        end
     end
 end
