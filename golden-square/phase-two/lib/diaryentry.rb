@@ -17,7 +17,7 @@ class DiaryEntry
         @contents.split(" ").length
     end
 
-    def reading_time
-        0
+    def reading_time(wpm)
+        (count_words / wpm.to_f).ceil
     end
 end
