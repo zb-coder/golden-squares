@@ -15,4 +15,11 @@ describe DiaryEntry do
             expect(diary_entry.count_words).to eq 1
         end
     end
+
+    describe '#reading_time' do
+        it 'returns zero when the contents string is empty' do 
+            diary_entry =DiaryEntry.new('my_title', '')
+            expect(diary_entry.reading_time).to eq 0
+        end
+    end
 end

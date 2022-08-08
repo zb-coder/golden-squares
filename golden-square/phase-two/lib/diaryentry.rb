@@ -16,4 +16,8 @@ class DiaryEntry
     def count_words
         @contents.split(" ").length
     end
+
+    def reading_time
+        0
+    end
 end
