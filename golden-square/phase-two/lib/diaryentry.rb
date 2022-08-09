@@ -28,7 +28,11 @@ class DiaryEntry
         start_at = @last_word_read
         end_at = @last_word_read + no_of_words_we_can_read
         current_reading_chunk = @contents.split(" ")[start_at, end_at].join(" ")
-        @last_word_read = end_at
+        if end_at >= count_words
+            @last_word_read = 0
+        else
+            @last_word_read = end_at
+        end
         current_reading_chunk
     end
 end

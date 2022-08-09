@@ -64,6 +64,22 @@ describe DiaryEntry do
                     chunk = diary_entry.reading_chunk(2, 1)
                     expect(chunk).to eq('entry')
                 end
+
+                it 'restarts after reading the whole contents' do
+                    diary_entry = DiaryEntry.new('my_title', 'my diary entry')
+                    diary_entry.reading_chunk(2, 1)
+                    diary_entry.reading_chunk(2, 1)
+                    chunk = diary_entry.reading_chunk(2, 1)
+                    expect(chunk).to eq('my diary')
+                end
+
+                it 'restarts if it finishes exactly at the end of the contents' do
+                    diary_entry = DiaryEntry.new('my_title', 'my diary entry')
+                    diary_entry.reading_chunk(2, 1)
+                    diary_entry.reading_chunk(1, 1)
+                    chunk = diary_entry.reading_chunk(2, 1)
+                    expect(chunk).to eq('my diary')
+                end
             end
         end
     end
