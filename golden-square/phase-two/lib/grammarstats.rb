@@ -6,7 +6,7 @@ class GrammarStats
     def check(text)
         if text.empty? 
             fail "sentence not provided"
-        elsif text[0] != text[0].upcase || !text.end_with?(".") && !text.end_with?("!")
+        elsif text[0] != text[0].upcase || !text.end_with?(".") && !text.end_with?("!") && !text.end_with?("?")
             return false
         else
             return true

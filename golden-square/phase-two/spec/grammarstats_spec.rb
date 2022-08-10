@@ -28,6 +28,13 @@ describe GrammarStats do
             end
         end
 
+        context 'given the text begins with a capital letter and ends with a sentence-ending punctuation mark' do
+            it 'returns true' do
+                grammar_stats = GrammarStats.new
+                expect(grammar_stats.check("The weather is nice?")).to eq true
+            end
+        end
+
         context 'given the text does not begin with a capital letter' do
             it 'returns false' do
                 grammar_stats = GrammarStats.new
