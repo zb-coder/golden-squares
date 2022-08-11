@@ -55,5 +55,16 @@ describe GrammarStats do
                 expect(grammar_stats.check("the weather is nice")).to eq false
             end
         end
+
+        context 'given the result is true 3 times' do
+            it 'returns the percentage good as 75' do
+                grammar_stats = GrammarStats.new
+                grammar_stats.check("The weather is nice.")
+                grammar_stats.check("The weather is nice.")
+                grammar_stats.check("The weather is nice.")
+                grammar_stats.check("The weather is nice")
+                expect(grammar_stats.percentage_good).to eq 75
+            end
+        end
     end
 end
