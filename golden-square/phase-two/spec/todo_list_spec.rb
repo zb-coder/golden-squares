@@ -7,4 +7,12 @@ describe TodoList do
             expect(todo_list.list).to eq []
         end
     end
+
+    context 'given a task' do
+        it 'adds task to an array' do
+            todo_list = TodoList.new
+            todo_list.add("Buy some bread")
+            expect(todo_list.list).to eq ["Buy some bread"]
+        end
+    end
 end
