@@ -33,4 +33,14 @@ describe Tracks do
             expect(tracks.list).to eq ["Three Little Birds"]
         end
     end
+
+    context 'given the user wants to remove a track' do
+        it 'removes that track from the list' do
+            tracks = Tracks.new
+            tracks.add("Three Little Birds")
+            tracks.add("Stayin' Alive")
+            tracks.remove("Three Little Birds")
+            expect(tracks.list).to eq ["Stayin' Alive"]
+        end
+    end
 end

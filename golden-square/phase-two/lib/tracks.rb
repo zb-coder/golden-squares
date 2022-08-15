@@ -11,4 +11,8 @@ class Tracks
     def list
         return @tracks
     end
+
+    def remove(track)
+        @tracks.delete(track)
+    end
 end
