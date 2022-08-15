@@ -11,4 +11,8 @@ class TodoList
     def list
         return @tasks
     end
+
+    def complete(task)
+        @tasks.delete(task)
+    end
 end
