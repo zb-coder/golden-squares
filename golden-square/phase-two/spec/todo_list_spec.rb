@@ -34,4 +34,12 @@ describe TodoList do
             expect(todo_list.list).to eq ["Buy some bread"]
         end
     end
+
+    context 'given a task that does not exist' do
+        it 'fails' do
+            todo_list = TodoList.new
+            todo_list.add("Buy some bread")
+            expect{todo_list.complete("Buy some soap")}.to raise_error "Task does not exist"
+        end
+    end
 end
