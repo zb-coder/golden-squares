@@ -15,4 +15,13 @@ describe Tracks do
             expect(tracks.list).to eq ["Three little birds"] 
         end
     end
+
+    context 'given tracks are added' do
+        it 'returns it in a list' do
+            tracks = Tracks.new
+            tracks.add("Three Little Birds")
+            tracks.add("Stayin' Alive")
+            expect(tracks.list).to eq ["Three Little Birds", "Stayin' Alive"]
+        end
+    end
 end
