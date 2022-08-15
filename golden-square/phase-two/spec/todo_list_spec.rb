@@ -25,8 +25,8 @@ describe TodoList do
         end
     end
 
-    context 'given two tasks' do
-        it 'returns both tasks in an array' do
+    context 'when we complete a task' do
+        it 'removes that task from the array' do
             todo_list = TodoList.new
             todo_list.add("Buy some bread")
             todo_list.add("Put petrol in the car")
@@ -35,7 +35,7 @@ describe TodoList do
         end
     end
 
-    context 'given a task that does not exist' do
+    context 'when we try to complete a task that does not exist' do
         it 'fails' do
             todo_list = TodoList.new
             todo_list.add("Buy some bread")
