@@ -24,4 +24,13 @@ describe Tracks do
             expect(tracks.list).to eq ["Three Little Birds", "Stayin' Alive"]
         end
     end
+
+    context 'given duplicate tracks are added' do
+        it 'returns only one in a list' do
+            tracks = Tracks.new
+            tracks.add("Three Little Birds")
+            tracks.add("Three Little Birds")
+            expect(tracks.list).to eq ["Three Little Birds"]
+        end
+    end
 end
