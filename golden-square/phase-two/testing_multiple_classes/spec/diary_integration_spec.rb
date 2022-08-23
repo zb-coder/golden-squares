@@ -45,4 +45,26 @@ describe 'integration' do
             expect(diary.reading_time(2)).to eq 3
         end
     end
+
+    describe 'best reading time entry bahviour' do
+        context "where we just have one entry and it is readable in the time" do
+            it "returns that entry" do
+                diary = Diary.new
+                diary_entry_1 = DiaryEntry.new("my_title_1", "my contents ")
+                diary.add(diary_entry_1)
+                result = diary.find_best_entry_for_reading_time(2, 1)
+                expect(result).to eq diary_entry_1
+            end
+        end
+
+        context "where we just have one entry and it is unreadable in the time" do
+            it "returns nil" do
+                diary = Diary.new
+                diary_entry_1 = DiaryEntry.new("my_title_1", "my contents longer")
+                diary.add(diary_entry_1)
+                result = diary.find_best_entry_for_reading_time(2, 1)
+                expect(result).to eq nil
+            end
+        end
+    end
 end
