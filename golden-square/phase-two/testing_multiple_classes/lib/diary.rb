@@ -22,17 +22,16 @@ class Diary
     end
   
     def find_best_entry_for_reading_time(wpm, minutes)
-         readable_entries = @entries.filter do |entry| 
-          entry.reading_time(wpm) <= minutes
-         end
-         sorted_by_longest = readable_entries.sort_by do |entry|
+         readable_entries(wpm, minutes).sort_by do |entry|
           entry.count_words
-         end
-         sorted_by_longest.last
-
-
-      # Returns an instance of diary entry representing the entry that is closest 
-      # to, but not over, the length that the user could read in the minutes they
-      # have available given their reading speed.
+         end.last
     end
+
+  private 
+
+  def readable_entries(wpm, minutes)
+    return @entries.filter do |entry| 
+      entry.reading_time(wpm) <= minutes
+     end
   end
+end
