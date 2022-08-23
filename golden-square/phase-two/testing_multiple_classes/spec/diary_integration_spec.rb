@@ -46,7 +46,7 @@ describe 'integration' do
         end
     end
 
-    describe 'best reading time entry bahviour' do
+    describe 'best reading time entry behviour' do
         context "where we just have one entry and it is readable in the time" do
             it "returns that entry" do
                 diary = Diary.new
@@ -64,6 +64,20 @@ describe 'integration' do
                 diary.add(diary_entry_1)
                 result = diary.find_best_entry_for_reading_time(2, 1)
                 expect(result).to eq nil
+            end
+        end
+
+        context "where we have more than one entry and it is readable in the time" do
+            it "returns the longest entry the user can read in this time" do
+                diary = Diary.new
+                best_entry = DiaryEntry.new("my_title", "one two")
+                diary.add(DiaryEntry.new("my_title", "one"))
+                diary.add(best_entry)
+                diary.add(DiaryEntry.new("my_title", "one two three"))
+                diary.add(DiaryEntry.new("my_title", "one two three four"))
+                diary.add(DiaryEntry.new("my_title", "one two three four five"))
+                result = diary.find_best_entry_for_reading_time(2, 1)
+                expect(result).to eq best_entry
             end
         end
     end
