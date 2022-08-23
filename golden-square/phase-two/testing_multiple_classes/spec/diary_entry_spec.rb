@@ -8,6 +8,17 @@ describe DiaryEntry do
     end
 
     describe '#count_words' do
+
+        it "returns zero" do
+            diary_entry = DiaryEntry.new("title", "")
+            expect(diary_entry.count_words).to eq 0
+        end
+
+        it "returns one if the contents has one word" do
+            diary_entry = DiaryEntry.new("title", "my")
+            expect(diary_entry.count_words).to eq 1
+        end
+
         it "counts the words in the contents" do
             diary_entry = DiaryEntry.new("title", "my contents 1")
             expect(diary_entry.count_words).to eq 3
