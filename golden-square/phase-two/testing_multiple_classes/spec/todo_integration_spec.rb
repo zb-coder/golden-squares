@@ -49,4 +49,19 @@ describe 'integration' do
             expect(todo_list.complete).to eq [todo_2, todo_3]
         end
     end
+
+    context 'whether or not all tasks have been complete' do
+        it 'marks all tasks complete' do
+            todo_list = TodoList.new
+            todo_1 = Todo.new("task_1")
+            todo_2 = Todo.new("task_2")
+            todo_3 = Todo.new("task_3")
+            todo_3.mark_done!
+            todo_list.add(todo_1)
+            todo_list.add(todo_2)
+            todo_list.add(todo_3)
+            todo_list.give_up!
+            expect(todo_list.give_up!).to eq [todo_1, todo_2, todo_3]
+        end
+    end
 end

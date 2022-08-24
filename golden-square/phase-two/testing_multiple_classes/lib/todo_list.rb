@@ -30,5 +30,9 @@ class TodoList
   
     def give_up!
       # Marks all todos as complete
+      @all_todos.map do |todo|
+        todo.mark_done!
+      end
+      @all_todos
     end
   end
