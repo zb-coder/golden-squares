@@ -2,6 +2,7 @@ class TodoList
     def initialize
         @all_todos = [] 
         @incomplete = []
+        @complete = []
     end
   
     def add(todo) # todo is an instance of Todo
@@ -20,6 +21,11 @@ class TodoList
   
     def complete
       # Returns all complete todos
+
+      @all_todos.map do |todo|
+        @complete << todo if todo.done? == true
+      end
+      return @complete
     end
   
     def give_up!
