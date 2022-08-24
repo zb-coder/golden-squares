@@ -10,4 +10,18 @@ describe 'integration' do
             expect(todo_list.incomplete).to eq [todo]
         end
     end
+    
+    context 'when multiple incomplete tasks are given' do
+        it 'returns the incomplete tasks' do
+            todo_list = TodoList.new
+            todo_1 = Todo.new("task_1")
+            todo_2 = Todo.new("task_2")
+            todo_3 = Todo.new("task_3")
+            todo_3.mark_done!
+            todo_list.add(todo_1)
+            todo_list.add(todo_2)
+            todo_list.add(todo_3)
+            expect(todo_list.incomplete).to eq [todo_1, todo_2]
+        end
+    end
 end
