@@ -9,7 +9,9 @@ class TaskList
     end
 
     def all
-        return @tasks
+        return @tasks.select do |task|
+            !task.complete?
+        end
         # But only the non-complete ones
     end
 
