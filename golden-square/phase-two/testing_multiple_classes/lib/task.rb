@@ -2,6 +2,7 @@ class Task
 
     def initialize(title) # Title is a string
         @title = title
+        @complete = false
     end
 
     def title
@@ -9,11 +10,13 @@ class Task
     end
 
     def mark_complete
-        # Marks the task as complete
+        @complete = true
         # Returns nothing
     end
 
     def complete?
+
+        return @complete
         #Returns true if marked completed, otherwise false
     end
   
