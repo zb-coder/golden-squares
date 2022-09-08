@@ -16,7 +16,9 @@ class TaskList
     end
 
     def complete
-        # Returns a list of Task instances
+        return @tasks.select do |task|
+            task.complete?
+        end
         # But only the complete ones
     end
 end
