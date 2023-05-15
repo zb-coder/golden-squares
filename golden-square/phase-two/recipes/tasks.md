@@ -67,6 +67,8 @@ class Task
 
   def initialize(title) # Title is a string
 
+  end
+
   def title
     # Returns the title as a string
   end
@@ -131,7 +133,7 @@ a more granular level of detail._
 # TaskList
 #1
 task_list = TaskList.new
-task_list.add # => []
+task_list.all # => []
 
 #2
 task_list = TaskList.new
