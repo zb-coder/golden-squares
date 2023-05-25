@@ -4,7 +4,7 @@
 // Otherwise it returns false.
 
 function isLandscape(width, height) {
-    return (width > height)
+    return (width > height);
 }
 
 let landscape = isLandscape(11, 12);
