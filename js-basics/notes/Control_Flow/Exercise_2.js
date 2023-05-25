@@ -4,8 +4,8 @@
 // Otherwise it returns false.
 
 function isLandscape(width, height) {
-    return (width > height) ? true : false
+    return (width > height)
 }
 
-let landscape = isLandscape(13, 12);
+let landscape = isLandscape(11, 12);
 console.log(landscape);
