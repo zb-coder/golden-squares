@@ -4,9 +4,8 @@
 // maximum of the two.
 
 function max(number1, number2) {
-    if (number1 > number2) return number1;
-    else return number2;
+    return (number1 > number2) ? number1 : number2;
 }
 
-let number = max(44, 45);
+let number = max(47, 46);
 console.log(number);
