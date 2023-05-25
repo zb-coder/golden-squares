@@ -11,6 +11,8 @@
 
 // example of object:
 
+// THIS IS BETTER TO USE FOR OBJECTS
+
 const person = {
     name: 'Mosh',
     age: 30

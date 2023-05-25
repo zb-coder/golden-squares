@@ -1,10 +1,10 @@
 // Loops
-// Differnt loops in JavaScript:
+// Different loops in JavaScript:
 // 1) For loops
 // 2) While loops
 // 3) Do...while loops
-// 4) For...in loops
-// 5) For...of loops
+// 4) For...in loops = better for objects
+// 5) For...of loops - better for arrays
 
 // All these loops do the same thing, repeat an action a number 
 // of times but there is a difference in how they start and end.
