@@ -8,7 +8,7 @@
 
 function fizzBuzz(input) {
    if (typeof input !== 'number')
-        return 'Not a number';
+        return NaN;
     
     if ((input % 3 === 0) && (input % 5 === 0))
         return 'FizzBuzz';
@@ -22,5 +22,5 @@ function fizzBuzz(input) {
     return input;
 }
 
-const output = fizzBuzz();
+const output = fizzBuzz('');
 console.log(output)
