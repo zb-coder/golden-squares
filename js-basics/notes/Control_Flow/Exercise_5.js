@@ -5,10 +5,10 @@
 // e.g. 1 Odd
 
 function showNumbers(limit){
-    for (let i = 0; i < limit; i ++) {
+    for (let i = 0; i <= limit; i ++) {
         if (i % 2 === 0)
             console.log (i, 'EVEN');
-        if (i % 2 !== 0)
+        else
             console.log (i, 'ODD');
     }
 }
