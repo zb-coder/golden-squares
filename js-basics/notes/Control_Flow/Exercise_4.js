@@ -8,7 +8,9 @@
 
 
 function checkSpeed(speed) {
-    if (speed < 75) 
+    const speedLimit = 70;
+
+    if (speed < speedLimit) 
         console.log('Ok') 
     
     if ((speed >= 75) && (speed < 80))
