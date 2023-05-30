@@ -12,22 +12,21 @@ const marks = [80, 80, 50];
 
 function calculateGrade(marks) {
 let sum = 0;
+for (let mark of marks) 
+    sum += mark;
 
-    
-    for(let i = 0; i < marks.length; i+= 1) 
-        sum += marks[i]
-        let average = sum / marks.length
+let average = sum / marks.length;
 
-        if (average >= 1 && average < 60)
-            return 'F'
-        if (average >= 60 && average < 70)
-            return 'D'
-        if (average >= 70 && average < 80)
-            return ('C')
-        if (average >= 80 && average < 90)
-            return 'B'
-        if (average >= 90 && average < 100)
-            return 'A'
+if (average >= 1 && average < 60)
+    return 'F'
+if (average >= 60 && average < 70)
+    return 'D'
+if (average >= 70 && average < 80)
+    return ('C')
+if (average >= 80 && average < 90)
+    return 'B'
+if (average >= 90 && average < 100)
+    return 'A'
 
 }
 
