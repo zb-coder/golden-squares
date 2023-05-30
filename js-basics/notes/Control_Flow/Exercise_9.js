@@ -17,17 +17,11 @@ for (let mark of marks)
 
 let average = sum / marks.length;
 
-if (average >= 1 && average < 60)
-    return 'F'
-if (average >= 60 && average < 70)
-    return 'D'
-if (average >= 70 && average < 80)
-    return ('C')
-if (average >= 80 && average < 90)
-    return 'B'
-if (average >= 90 && average < 100)
-    return 'A'
-
+if (average < 60) return 'F';
+if (average < 70) return 'D';
+if (average < 80) return 'C';
+if (average < 90) return 'B';
+if (average < 100) return 'A';
 }
 
 console.log(calculateGrade(marks));
